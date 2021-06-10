@@ -1,4 +1,6 @@
 class Calculator:
+    """Class that calculation"""
+    
     def __init__(self, Input):
         Input = Input.replace(" ", "")
         #Making a list of all letters of the Input
@@ -40,6 +42,7 @@ class Calculator:
         return numList[0]
 
     def formNumber(self, inputList):
+        """ Pairs brackets together, so that the program knows which calculations to work out first"""
         tempNum = ''
         numList = []
         operatorList = []
@@ -69,6 +72,9 @@ class Calculator:
         return numList, operatorList 
 
     def solve(self, numList, operatorList):
+        """This function loops through the current indexes of operators and works out the order in which the operators need to be 
+                 arranged by comparing the operator_precedence values and seeing if a particular operator needs to be worked on
+                 before or after another one """
         for x,y in enumerate(operatorList):
             if y is '^':
                 numList[x] = float(numList[x]) ** numList[x+1]
