@@ -1,5 +1,5 @@
 class Calculator:
-    """Class that calculation"""
+    """Class for calculator"""
     
     def __init__(self, Input):
         Input = Input.replace(" ", "")
@@ -20,6 +20,9 @@ class Calculator:
         self.result = numList[0]
 
     def solveBrackets(self, Input):
+        """ This funticons Finds the innermost brackets so that they can be solved first
+        and Only returns one pair of brackets at a time. """
+
         inputList = [y for x,y in enumerate(Input)]
         numList, operatorList = [], []
         tempNum = ''
